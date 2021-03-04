@@ -16,45 +16,30 @@
   </head>
   <body>
       
+    <!--HEADING-->
+    <div class="direction-information" style="margin:0 auto;text-align: center;margin-bottom: 3%;font-size: 1.6rem;">
+      <b><u>ARES ARM CONTROL</u></b>
+    </div>
+
+    <!-- ENDING OF THE HEADING-->
+
     <div class="row my-row justify-content-around">
-      <div class="col-md-4 gradient-border">
-          <div class="row">
-              <div class="col-md-12 my-col1 gradient-border direction-information">
-                  <div class="row">
-                      <div class="col-md-12 text-center" style="margin-top: 4%; font-size: 1.6rem;">
-                          <b>ARES ROBOTICS SPECTROMETER</b>
-                      </div>
-                  </div>
-              </div>
-          </div>
+      <div class="col-md-5 gradient-border">
           <div class="row" style="color: white;font-weight: 500;">
 
-              <!--INFORMATION BAR-->
-              <div class="frame">
-                <div class="center">
-                  <div class="title">
-                    <h1>Drop file to upload</h1>
-                  </div>
-              
-                  <div class="dropzone">
-                    <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                    <input type="file" class="upload-input" />
-                  </div>
-              
-                  <button type="button" class="btn" name="uploadbutton" style="margin-bottom: 2%;">Upload file</button>
-              
-                </div>
-              </div>
+            <!--FOR ADDING THE VIDEO FRAME 1 IN LANDSCAPE MODE-->
+
+
 
 
 
           </div>
       </div>
-      <div class="col-md-7 gradient-border">
+      <div class="col-md-5 gradient-border">
           <div class="row">
               <div class="col-md-12 gradient-border">
 
-                    <!--THE RIGHT IMAGE-->
+            <!--FOR ADDING THE VIDEO FRAME 2 IN LANDSCAPE MODE-->
 
 
 
@@ -62,20 +47,66 @@
 
               </div>
           </div>
-         
-         <!--<div class="row">
-          </div>--> 
       </div>
   </div>
 
 
   <div class="container-fluid">
-      <div class="row my-row justify-content-around" style="margin-top: 2%;">
-        <div class="col-md-12 gradient-border">
+      <div class="row justify-content-around control-box" style="margin-top: 2%;">
+        <div class="col-md-8 gradient-border">
           <div class="row">
 
-            <!--BOTTOM BAR FOR THE FULL LENGTH GRAPH-->
+            <!--BOTTOM BAR FOR INPUT CONTROLS AND SUBMIT BUTTON-->
+            <form class="needs-validation form-control" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">P</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="P"  required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">R</label>
+                  <input type="text" class="form-control" id="validationCustom02" placeholder="R"required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02">LS</label>
+                  <input type="text" class="form-control" id="validationCustom02" placeholder="LS" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">A1</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="A1"  required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">A2</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="A2"  required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">B</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="B"  required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+              </div>
 
+              <button class="btn btn-primary" type="submit" style="margin:0 auto;">Submit form</button>
+            </form>
 
 
           </div>
@@ -96,6 +127,25 @@
         console.log("hello")
         ipcRenderer.send('Changing',5)
       }
+
+                  // Example starter JavaScript for disabling form submissions if there are invalid fields
+                  (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
 
     </script>
   </body>
